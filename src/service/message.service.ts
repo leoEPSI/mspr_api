@@ -15,7 +15,7 @@ export class MessageService {
   }
 
   async getMessageById(id: number) {
-    return this.messageRepository.findOne(id);
+    return this.messageRepository.findOneBy({id});
   }
 
   async createMessage(messageData: any) {
@@ -25,11 +25,11 @@ export class MessageService {
 
   async updateMessage(id: number, messageData: any) {
     await this.messageRepository.update(id, messageData);
-    return this.messageRepository.findOne(id);
+    return this.messageRepository.findOneBy({id});
   }
 
   async deleteMessage(id: number) {
-    const deletedMessage = await this.messageRepository.findOne(id);
+    const deletedMessage = await this.messageRepository.findOneBy({id});
     await this.messageRepository.delete(id);
     return deletedMessage;
   }

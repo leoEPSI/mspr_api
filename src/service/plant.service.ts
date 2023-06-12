@@ -15,7 +15,7 @@ export class PlantService {
   }
 
   async getPlantById(id: number) {
-    return this.plantRepository.findOne(id);
+    return this.plantRepository.findOneBy({id});
   }
 
   async createPlant(plantData: any) {
@@ -25,11 +25,11 @@ export class PlantService {
 
   async updatePlant(id: number, plantData: any) {
     await this.plantRepository.update(id, plantData);
-    return this.plantRepository.findOne(id);
+    return this.plantRepository.findOneBy({id});
   }
 
   async deletePlant(id: number) {
-    const deletedPlant = await this.plantRepository.findOne(id);
+    const deletedPlant = await this.plantRepository.findOneBy({id});
     await this.plantRepository.delete(id);
     return deletedPlant;
   }

@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { User } from '../entity/user.entity';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
@@ -15,7 +15,7 @@ export class UsersService {
   }
 
   async getUserById(id: number) {
-    return this.userRepository.findOne(id);
+    return this.userRepository.findOneBy({id});
   }
 
   async createUser(userData: any) {
@@ -25,11 +25,11 @@ export class UsersService {
 
   async updateUser(id: number, userData: any) {
     await this.userRepository.update(id, userData);
-    return this.userRepository.findOne(id);
+    return this.userRepository.findOneBy({id});
   }
 
   async deleteUser(id: number) {
-    const deletedUser = await this.userRepository.findOne(id);
+    const deletedUser = await this.userRepository.findOneBy({id});
     await this.userRepository.delete(id);
     return deletedUser;
   }

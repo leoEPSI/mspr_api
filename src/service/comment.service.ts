@@ -15,7 +15,7 @@ export class CommentService {
   }
 
   async getCommentById(id: number) {
-    return this.commentRepository.findOne(id);
+    return this.commentRepository.findOneBy({id});
   }
 
   async createComment(commentData: any) {
@@ -25,11 +25,11 @@ export class CommentService {
 
   async updateComment(id: number, commentData: any) {
     await this.commentRepository.update(id, commentData);
-    return this.commentRepository.findOne(id);
+    return this.commentRepository.findOneBy({id});
   }
 
   async deleteComment(id: number) {
-    const deletedComment = await this.commentRepository.findOne(id);
+    const deletedComment = await this.commentRepository.findOneBy({id});
     await this.commentRepository.delete(id);
     return deletedComment;
   }
