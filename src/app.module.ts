@@ -1,21 +1,13 @@
 import { Module } from '@nestjs/common';
-/*
-import { AppController } from './app.controller';
-import { CommentController } from './controller/comment.controller';
-import { MessageController } from './controller/message.controller';
-import { PlantController } from './controller/plant.controller';
-import { UserController } from './controller/user.controller';
 
-import { AppService } from './app.service';
-import { CommentService } from './service/comment.service';
-import { MessageService } from './service/message.service';
-import { PlantService } from './service/plant.service';
-import { UserService } from './service/users.service';
-*/
 import { UserModule } from './module/user.module';
 import { PlantModule } from './module/plant.module';
 import { MessageModule } from './module/message.module';
 import { CommentModule } from './module/comment.module';
+import { PhotoCommentModule } from "./module/photo-comment.module";
+import { PhotoMessageModule } from "./module/photo-message.module";
+import { PhotoPlantModule } from "./module/photo-plant.module";
+import { PrivateConversationModule } from "./module/private-conversation.module";
 
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import {TypeOrmModule} from '@nestjs/typeorm';
@@ -43,6 +35,10 @@ import entities from './index';
     PlantModule,
     MessageModule,
     CommentModule,
+    PhotoCommentModule,
+    PhotoMessageModule,
+    PhotoPlantModule,
+    PrivateConversationModule,
   ],
 })
 export class AppModule {}

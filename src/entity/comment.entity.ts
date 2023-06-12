@@ -5,13 +5,13 @@ import { Plant } from './plant.entity';
 @Entity()
 export class Comment {
   @PrimaryGeneratedColumn()
-  id: number;
+  id_comment: number;
 
   @Column({ length: 255 })
-  contentComment: string;
+  content_comment: string;
 
-  @Column()
-  dateComment: Date;
+  @Column({ length: 255 })
+  date_comment: string;
 
   @ManyToOne(() => User)
   user: User;

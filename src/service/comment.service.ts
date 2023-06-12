@@ -14,8 +14,8 @@ export class CommentService {
     return this.commentRepository.find();
   }
 
-  async getCommentById(id: number) {
-    return this.commentRepository.findOneBy({id});
+  async getCommentById(id_comment: number) {
+    return this.commentRepository.findOneBy({id_comment});
   }
 
   async createComment(commentData: any) {
@@ -23,14 +23,14 @@ export class CommentService {
     return this.commentRepository.save(newComment);
   }
 
-  async updateComment(id: number, commentData: any) {
-    await this.commentRepository.update(id, commentData);
-    return this.commentRepository.findOneBy({id});
+  async updateComment(id_comment: number, commentData: any) {
+    await this.commentRepository.update(id_comment, commentData);
+    return this.commentRepository.findOneBy({id_comment});
   }
 
-  async deleteComment(id: number) {
-    const deletedComment = await this.commentRepository.findOneBy({id});
-    await this.commentRepository.delete(id);
+  async deleteComment(id_comment: number) {
+    const deletedComment = await this.commentRepository.findOneBy({id_comment});
+    await this.commentRepository.delete(id_comment);
     return deletedComment;
   }
 }

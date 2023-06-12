@@ -4,14 +4,14 @@ import { User } from './user.entity';
 @Entity()
 export class Message {
   @PrimaryGeneratedColumn()
-  id: number;
+  id_message: number;
 
   @Column({ length: 255 })
-  contentMessage: string;
+  content_message: string;
 
-  @Column()
-  dateMessage: Date;
+  @Column({length: 255})
+  date_message: string;
 
   @ManyToOne(() => User)
-  user: User;
+  id_photo_m: number;
 }
