@@ -1,30 +1,30 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Private_Conversation } from '../entity/private-conversation.entity';
+import { PrivateConversation } from '../entity/private-conversation.entity';
 
 @Injectable()
 export class PrivateConversationService {
   constructor(
-    @InjectRepository(Private_Conversation)
-    private readonly privateConversationRepository: Repository<Private_Conversation>,
+    @InjectRepository(PrivateConversation)
+    private readonly privateConversationRepository: Repository<PrivateConversation>,
   ) {}
 
-  async getAllPrivateConversations(): Promise<Private_Conversation[]> {
+  async getAllPrivateConversations(): Promise<PrivateConversation[]> {
     return this.privateConversationRepository.find();
   }
 
-  async getPrivateConversationById(id_user: number): Promise<Private_Conversation> {
-    return this.privateConversationRepository.findOneBy({id_user});
+  async getPrivateConversationById(id_private_conversation: number): Promise<PrivateConversation> {
+    return this.privateConversationRepository.findOneBy({id_private_conversation});
   }
 
-  async createPrivateConversation(privateConversation: Private_Conversation): Promise<Private_Conversation> {
+  async createPrivateConversation(privateConversation: PrivateConversation): Promise<PrivateConversation> {
     return this.privateConversationRepository.save(privateConversation);
   }
 
-  async updatePrivateConversation(id_user: number, privateConversation: Private_Conversation): Promise<Private_Conversation> {
-    await this.privateConversationRepository.update(id_user, privateConversation);
-    return this.privateConversationRepository.findOneBy({id_user});
+  async updatePrivateConversation(id_private_conversation: number, privateConversation: PrivateConversation): Promise<PrivateConversation> {
+    await this.privateConversationRepository.update(id_private_conversation, privateConversation);
+    return this.privateConversationRepository.findOneBy({id_private_conversation});
   }
 
   async deletePrivateConversation(id: number): Promise<void> {
