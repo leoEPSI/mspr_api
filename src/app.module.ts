@@ -19,6 +19,8 @@ import { CommentModule } from './module/comment.module';
 
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import {TypeOrmModule} from '@nestjs/typeorm';
+import entities from './index';
+
 
 @Module({
   imports: [
@@ -32,7 +34,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [],
+        entities: entities,
         synchronize: true,
       }),
       inject: [ConfigService],
@@ -42,7 +44,5 @@ import {TypeOrmModule} from '@nestjs/typeorm';
     MessageModule,
     CommentModule,
   ],
-  //controllers: [AppController, CommentController, MessageController, PlantController, UserController],
-  //providers: [AppService, CommentService, MessageService, PlantService, UserService],
 })
 export class AppModule {}
