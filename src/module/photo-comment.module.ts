@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PhotoCommentEntity } from './entity/photo-comment.entity';
-import { PhotoCommentController } from './controller/photo-comment.controller';
-import { PhotoCommentService } from './service/photo-comment.service';
+import { PhotoComment } from '../entity/photo-comment.entity';
+import { PhotoCommentController } from '../controller/photo-comment.controller';
+import { PhotoCommentService } from '../service/photo-comment.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([PhotoCommentEntity])],
+  imports: [TypeOrmModule.forFeature([PhotoComment])],
   controllers: [PhotoCommentController],
   providers: [PhotoCommentService],
 })
