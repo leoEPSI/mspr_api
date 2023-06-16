@@ -22,8 +22,8 @@ export class PhotoCommentService {
     return this.photoCommentRepository.save(photoComment);
   }
 
-  async updatePhotoComment(id_photo_c: number, photoComment: PhotoComment): Promise<PhotoComment> {
-    await this.photoCommentRepository.update(id_photo_c, photoComment);
+  async updatePhotoComment(id_photo_c: number, messageData: any): Promise<PhotoComment> {
+    await this.photoCommentRepository.update(id_photo_c, messageData);
     return this.photoCommentRepository.findOneBy({id_photo_c});
   }
 

@@ -22,8 +22,8 @@ export class PhotoPlantService {
     return this.photoPlantRepository.save(photoPlant);
   }
 
-  async updatePhotoPlant(id_photo_p: number, photoPlant: PhotoPlant): Promise<PhotoPlant> {
-    await this.photoPlantRepository.update(id_photo_p, photoPlant);
+  async updatePhotoPlant(id_photo_p: number, messageData: any): Promise<PhotoPlant> {
+    await this.photoPlantRepository.update(id_photo_p, messageData);
     return this.photoPlantRepository.findOneBy({id_photo_p});
   }
 

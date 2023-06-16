@@ -1,0 +1,906 @@
+{
+	"info": {
+		"_postman_id": "03b0264d-f82e-4b8f-8004-5ba7e9e04e8c",
+		"name": "MSPR_NEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "http://localhost:3000/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " http://localhost:3000/users/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"email_address\": \"john.doe@example.com\",\r\n  \"password\": \"password123\",\r\n  \"address\": \"123 Main Street\",\r\n  \"permission\": \"admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/users/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"email_address\": \"john.doe@example.com\",\r\n  \"password\": \"newpassword456\",\r\n  \"address\": \"456 Elm Street\",\r\n  \"permission\": \"user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " http://localhost:3000/users/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "private_conversation",
+			"item": [
+				{
+					"name": " http://localhost:3000/private-conversation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/private-conversation",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"private-conversation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/private-conversation/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/private-conversation/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"private-conversation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/private-conversation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_user\": 1,\r\n  \"destinataireId\": 2,\r\n  \"messageId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/private-conversation",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"private-conversation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/private-conversation/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_user\": 1,\r\n  \"destinataireId\": 2,\r\n  \"messageId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/private-conversation/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"private-conversation",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/private-conversation/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/private-conversation/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"private-conversation",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": " http://localhost:3000/comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/comments/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comments/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/comments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content_comment\": \"Contenu du commentaire\",\r\n  \"date_comment\": \"2023-06-16\",\r\n  \"user\": { \"id\": 1 },\r\n  \"plant\": { \"id\": 1 }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " http://localhost:3000/comments/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content_comment\": \"Contenu du \",\r\n  \"date_comment\": \"2023-06-16\",\r\n  \"user\": { \"id\": 1 },\r\n  \"plant\": { \"id\": 1 }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comments/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/comments/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comments/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plant",
+			"item": [
+				{
+					"name": "{{host}}/plants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/plants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"plants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/plants/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/plants/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"plants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/plants/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nom de la plante\",\r\n  \"user\": { \"id\": 1 },\r\n  \"lat\": 12.345678,\r\n  \"lng\": 98.765432,\r\n  \"description\": \"Description de la plante\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/plants/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"plants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/plants/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nom de la \",\r\n  \"user\": { \"id\": 1 },\r\n  \"lat\": 12.345678,\r\n  \"lng\": 98.765432,\r\n  \"description\": \"Description de la plante\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/plants/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"plants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/plants/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/plants/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"plants",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photo_plant",
+			"item": [
+				{
+					"name": "{{host}}/photo-plant/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-plant/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-plant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-plant/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-plant/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-plant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-plant/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_p\": \"chemin/vers/image.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-plant/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-plant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-plant/",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_p\": \"chemin/vers/image2.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-plant/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-plant",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-plant/",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-plant/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-plant",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photo_message",
+			"item": [
+				{
+					"name": "{{host}}/photo-message/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-message/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-message",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-message/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-message/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-message",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-message/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_m\": \"chemin/vers/image.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-message/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-message",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-message/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_m\": \"chemin/vers/image2.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-message/21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-message",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-message/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-message/21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-message",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photo_comment",
+			"item": [
+				{
+					"name": "{{host}}/photo-comment/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-comment/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-comment/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-comment/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-comment/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_c\": \"chemin/vers/image.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-comment/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-comment/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image_c\": \"chemin/vers/image2.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/photo-comment/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-comment",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/photo-comment/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/photo-comment/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"photo-comment",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "{{host}}/messages/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/messages/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/messages/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/messages/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/messages/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content_message\": \"Contenu du message\",\r\n  \"date_message\": \"2023-06-16\",\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/messages/1",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content_message\": \"Contenu\",\r\n  \"date_message\": \"2023-06-16\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{host}}/messages/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/messages/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

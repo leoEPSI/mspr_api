@@ -22,8 +22,8 @@ export class PhotoMessageService {
     return this.photoMessageRepository.save(photoMessage);
   }
 
-  async updatePhotoMessage(id_photo_m: number, photoMessage: PhotoMessage): Promise<PhotoMessage> {
-    await this.photoMessageRepository.update(id_photo_m, photoMessage);
+  async updatePhotoMessage(id_photo_m: number, messageData: any): Promise<PhotoMessage> {
+    await this.photoMessageRepository.update(id_photo_m, messageData);
     return this.photoMessageRepository.findOneBy({id_photo_m});
   }
 

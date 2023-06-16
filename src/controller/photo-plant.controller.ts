@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param } from '@nestjs/common';
 import { PhotoPlantService } from '../service/photo-plant.service';
 import { PhotoPlant } from '../entity/photo-plant.entity';
 
@@ -21,9 +21,9 @@ export class PhotoPlantController {
     return this.photoPlantService.createPhotoPlant(photoPlant);
   }
 
-  @Put(':id')
-  async updatePhotoPlant(@Param('id') id: number, @Body() photoPlant: PhotoPlant): Promise<PhotoPlant> {
-    return this.photoPlantService.updatePhotoPlant(id, photoPlant);
+  @Patch(':id')
+  async updatePhotoPlant(@Param('id') id: number, @Body() messageData: any): Promise<PhotoPlant> {
+    return this.photoPlantService.updatePhotoPlant(id, messageData);
   }
 
   @Delete(':id')

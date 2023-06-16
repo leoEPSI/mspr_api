@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param } from '@nestjs/common';
 import { PhotoMessageService } from '../service/photo-message.service';
 import { PhotoMessage } from '../entity/photo-message.entity';
 
@@ -21,7 +21,7 @@ export class PhotoMessageController {
     return this.photoMessageService.createPhotoMessage(photoMessage);
   }
 
-  @Put(':id')
+  @Patch(':id')
   async updatePhotoMessage(@Param('id') id: number, @Body() photoMessage: PhotoMessage): Promise<PhotoMessage> {
     return this.photoMessageService.updatePhotoMessage(id, photoMessage);
   }

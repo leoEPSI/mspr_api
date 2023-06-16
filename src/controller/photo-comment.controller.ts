@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param } from '@nestjs/common';
 import { PhotoCommentService } from '../service/photo-comment.service';
 import { PhotoComment } from '../entity/photo-comment.entity';
 
@@ -21,7 +21,7 @@ export class PhotoCommentController {
     return this.photoCommentService.createPhotoComment(photoComment);
   }
 
-  @Put(':id')
+  @Patch(':id')
   async updatePhotoComment(@Param('id') id: number, @Body() photoComment: PhotoComment): Promise<PhotoComment> {
     return this.photoCommentService.updatePhotoComment(id, photoComment);
   }
