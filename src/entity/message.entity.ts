@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { PhotoMessage } from './photo-message.entity';
 import { PrivateConversation } from './private-conversation.entity';
+import { User } from './user.entity';
 
 @Entity()
 export class Message {
@@ -13,6 +14,9 @@ export class Message {
   @Column({length: 255})
   date_message: string;
 
+  @ManyToOne(() => User)
+  id_users: number;
+  
   @ManyToOne(() => PhotoMessage)
   id_photo_m: number;
 

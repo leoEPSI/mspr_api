@@ -38,6 +38,8 @@ export class PrivateConversationService {
     return this.messageRepository
       .createQueryBuilder('message')
       .leftJoinAndSelect('message.id_photo_m', 'photo_message')
+      .leftJoinAndSelect('message.id_users', 'user')
+      .select(['message', 'user.id'])
       .where('message.id_private_conversation = :conversationId', { conversationId })
       .getMany();
   }

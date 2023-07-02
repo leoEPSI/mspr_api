@@ -33,4 +33,9 @@ export class MessageService {
     await this.messageRepository.delete(id_message);
     return deletedMessage;
   }
+
+  async getMessageByIdPrivateConversation(id_message: number) {
+    return this.messageRepository.findOneBy({id_message});
+  }
+
 }
