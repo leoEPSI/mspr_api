@@ -20,6 +20,7 @@ export class CommentController {
     return this.commentService.createComment(commentData);
   }
 
+  
   @Patch(':id')
   updateComment(@Param('id') id: number, @Body() commentData: any) {
     return this.commentService.updateComment(id, commentData);
