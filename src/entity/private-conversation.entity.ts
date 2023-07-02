@@ -10,7 +10,4 @@ export class PrivateConversation {
 
   @Column()
   destinataireId: number;
-
-  @Column()
-  messageId: number;
 }

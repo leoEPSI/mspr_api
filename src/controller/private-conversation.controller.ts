@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
 import { PrivateConversationService } from '../service/private-conversation.service';
 import { PrivateConversation } from '../entity/private-conversation.entity';
+import { Message } from '../entity/message.entity';
 
 @Controller('private-conversation')
 export class PrivateConversationController {
@@ -33,4 +34,10 @@ export class PrivateConversationController {
   async deletePrivateConversation(@Param('id') id: number): Promise<void> {
     return this.privateConversationService.deletePrivateConversation(id);
   }
+
+  @Get(':id/messages')
+  async getMessagesByConversationId(@Param('id') id: number): Promise<Message[]> {
+    return this.privateConversationService.getMessagesByConversationId(id);
+  }
+
 }
