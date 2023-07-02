@@ -34,13 +34,29 @@ export class PrivateConversationService {
     await this.privateConversationRepository.delete(id);
   }
 
-  async getMessagesByConversationId(conversationId: number): Promise<Message[]> {
+  async getMessagesByConversationId(conversationId: number): Promise<any[]> {
     return this.messageRepository
       .createQueryBuilder('message')
-      .leftJoinAndSelect('message.id_photo_m', 'photo_message')
-      .leftJoinAndSelect('message.id_users', 'user')
-      .select(['message', 'user.id'])
+      .leftJoin('message.id_users', 'user')
+      .select([
+        'message.id_message',
+        'message.content_message',
+        'message.date_message',
+        'message.id_photo_m',
+        'user.id',
+        'user.first_name',
+      ])
       .where('message.id_private_conversation = :conversationId', { conversationId })
-      .getMany();
+      .getRawMany()
+      .then(messages => {
+        return messages.map(message => ({
+          id_message: message.message_id_message,
+          content_message: message.message_content_message,
+          date_message: message.message_date_message,
+          id_photo_m: message.message_id_photo_m,
+          id: message.user_id,
+          first_name: message.user_first_name,
+        }));
+      });
   }
 }
